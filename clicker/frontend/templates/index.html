@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script src="{% static 'js/index.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="utf-8">
+    <title>Cat</title>
+</head>
+<body onload="getUser({{ user.id }})">
+<div class="wrapper">
+    <header>
+        <div class="header-container">
+            <div class="delta-header">
+                <h2 class="nickname-header" id="user">%user%</h2>
+                <a href="/logout" style="height: 28px;">log out</a>
+            </div>
+        </div>
+    </header>
+    <aside>
+        <div class="boost-wrapper" id="boost-wrapper">
+            <div class="boost-holder" id="boost-holder" onclick="buyBoost(0)">
+                <div class="item-1">
+                    <input type="image" style="height: 145px; width: 150px; border-radius: 20px"
+                           src="https://sun9-45.userapi.com/impg/6-oFudSJJYlaYG_fPsKrljvCZjELSO8PK9PAYA/TIjOvifIGNE.jpg?size=899x882&quality=96&sign=c4eb7ec00be517e70b533b9e437ed98f&type=album"/>
+                </div>
+                <div class="item-2">
+                    <div class="box-1">
+                        <div>Сила буста:
+                            <div id="boostPower">0</div>
+                        </div>
+                        <div>Цена буста
+                            <div id="boostPrice">10</div>
+                        </div>
+                    </div>
+                    <div class="box-2">
+                        <div>Уровень буста
+                            <div id="boostLevel" class="">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <div>
+            <div id="user_data">
+                <h3> Сила клика
+                    <div id="clickPower">%clickPower%</div>
+                </h3>
+                <h3>У тебя
+                    <div id="data">%coins%</div> монет
+                </h3>
+                <h3> Сила автоклика
+                    <div id="autoClickPower"> {{ mainCycle.autoClickPower }} </div>
+                </h3>
+            </div>
+            <input type="image" style="width: 200px" class="elon" src="https://sun9-58.userapi.com/impg/sFtPOrQ0HZsF6ngmjP3qLveMX4y262J0sKrNGQ/hsQFJ0IxRrw.jpg?size=900x1600&quality=96&sign=647a8ca19ed3f107a0e4bc97c1277972&type=album"
+                   onclick="callClick()"/>
+        </div>
+    </main>
+</div>
+</body>
+</html>
